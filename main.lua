@@ -47,7 +47,7 @@ function love.load()
   Sum_Grab = 0
 
 --DB = {
---		0, 0, 0, 0, 0, 0, 0, 0, --] so i couldn't make an algorithm without this useless line
+--		0, 0, 0, 0, 0, 0, 0, 0, --] idk why
 --		-1, 1, -1, -1, -1, -1, 1, -1,
 --		1, 1, 1, 1, 1, 1, 1, 1,
 --		-1, 1, -1, 1, 1, -1, 1, -1,
@@ -72,7 +72,7 @@ function love.load()
 --  }
 
 --DB = {
---		 0,  0,  0,  0,  0,  0,  0,  0, --] so i couldn't make an algorithm without this useless line
+--		 0,  0,  0,  0,  0,  0,  0,  0, --] 
 --		 1,  1,  1,  1,  1,  1,  1,  1,
 --		 1,  1,  1,  1,  1,  1,  1,  1,
 --		 1,  1,  1,  1,  1,  1,  1,  1,
