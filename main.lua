@@ -9,7 +9,6 @@ local a = 0
 local z = 2
 local b, q = 0, 0
 
-
 function t(m)
   for i = 0, N - 1 do
     for j = 0, i do
@@ -46,8 +45,8 @@ function love.load()
   Step = -1
   Sum_Grab = 0
 
---DB = {
---		0, 0, 0, 0, 0, 0, 0, 0, --] idk why
+-- DB = {
+--		0, 0, 0, 0, 0, 0, 0, 0, --idk why
 --		-1, 1, -1, -1, -1, -1, 1, -1,
 --		1, 1, 1, 1, 1, 1, 1, 1,
 --		-1, 1, -1, 1, 1, -1, 1, -1,
@@ -58,8 +57,7 @@ function love.load()
 --		-1, 1, -1, -1, -1, -1, 1, -1
 --	}
 
-
---  DB = { --With love from Sora and Shiro.
+-- DB = { --With love from Sora&Shiro.
 --    0, 0, 0, 0, 0, 0, 0, 0,
 --    -1, -1, -1, -1, -1, -1, -1, -1,
 --    -1, 1, 1, 1, 1, 1, -1, 0,
@@ -71,8 +69,8 @@ function love.load()
 --    -1, -1, -1, -1, -1, 0, -1, -1,
 --  }
 
---DB = {
---		 0,  0,  0,  0,  0,  0,  0,  0, --] 
+-- DB = {
+--		 0,  0,  0,  0,  0,  0,  0,  0, 
 --		 1,  1,  1,  1,  1,  1,  1,  1,
 --		 1,  1,  1,  1,  1,  1,  1,  1,
 --		 1,  1,  1,  1,  1,  1,  1,  1,
@@ -82,8 +80,6 @@ function love.load()
 --		 1,  1,  1,  1,  1,  1,  1,  1,
 --		 1,  1,  1,  1,  1,  1,  1,  1
 --	}
-
-
 
   for i = 0, N - 1 do
     for j = 0, N - 1 do
@@ -96,6 +92,7 @@ function love.load()
       else
         DB[(i + 1) * N + (j + 1)] = 0
       end
+      
       if (i == 0 and j == 0) or (i == 0 and j == N - 1) or (i == N - 1 and j == 0) or (i == N - 1 and j == N - 1) then
         DB_Val[(i + 1) * N + (j + 1)] = 8
       elseif (i == 0 and j > 1 and j < N - 2) or (i == N - 1 and j > 1 and j < N - 2) or (i > 1 and i < N - 2 and j == 0) or (i > 1 and i < N - 2 and j == N - 1) then
@@ -110,33 +107,29 @@ function love.load()
     end
   end
 
-  Score_Black, Score_White, Score_Black_Val, --[[Score_White_Val,]] Score_Zero =  Score()
-
+  Score_Black, Score_White, --[[Score_Black_Val, Score_White_Val,]] Score_Zero =  Score()
   --DB_Val = t(DB_Val)
   --DB = t(DB)
 end
-
 
 function Score()
   local Score_White, Score_Black, Score_Zero, Score_Black_Val, Score_White_Val = 0, 0, 0, 0, 0
   for i = 0, N - 1 do
     for j = 0, N - 1 do
       if DB[(i + 1) * N + (j + 1)] == -1 then
-        Score_Black_Val = Score_Black_Val + DB_Val[(i + 1) * N + (j + 1)]
+        --Score_Black_Val = Score_Black_Val + DB_Val[(i + 1) * N + (j + 1)]
         Score_Black = Score_Black + 1
       elseif DB[(i + 1) * N + (j + 1)] == 1 then
         --Score_White_Val = Score_White_Val + DB_Val[(i + 1) * N + (j + 1)]
-        Score_Black_Val = Score_Black_Val - DB_Val[(i + 1) * N + (j + 1)]
+        --Score_Black_Val = Score_Black_Val - DB_Val[(i + 1) * N + (j + 1)]
         Score_White = Score_White + 1
       else
         Score_Zero = Score_Zero + 1
       end
     end
   end
-  return Score_Black, Score_White, Score_Black_Val,--[[Score_White_Val,]] Score_Zero
+  return Score_Black, Score_White, --[[Score_Black_Val,Score_White_Val,]] Score_Zero
 end
-
-
 
 function love.keypressed(keyCode)
   if (keyCode == "escape") then
@@ -149,19 +142,13 @@ function love.keypressed(keyCode)
   end
 end
 
-
 function love.update()
   if EzMode == true and Step == 1 then
     MousePosX, MousePosY = Rnd()
   else
     MousePosX, MousePosY = love.mouse.getPosition();
   end
-  --MousePosX, MousePosY = TLfres.getMousePosition(W, H)
-  --MousePosX = MousePosX
-  --MousePosY = MousePosY
-  love.keypressed()
 end
-
 
 function DrowCircle(x, y, col)
   if (col == 1) then
@@ -257,7 +244,6 @@ function Recount(x1, y1, x2, y2)
       Sum_Grab = Sum_Grab + 1
     end
   end
-
   if (x2 < x1) and (y2 < y1) then
     --print('↖')
     for i = (y2 + 1), (y1 - 1) do
@@ -269,7 +255,6 @@ function Recount(x1, y1, x2, y2)
       end
     end
   end
-
   if (x2 > x1) and (y2 > y1) then
     --print('↘')
     for i = (y1 + 1), (y2 - 1) do
@@ -281,7 +266,6 @@ function Recount(x1, y1, x2, y2)
       end
     end
   end
-
   if (x2 > x1) and (y2 < y1) then
     --print('↗');
     for i = (y2 + 1), (y1 - 1) do
@@ -293,7 +277,6 @@ function Recount(x1, y1, x2, y2)
       end
     end
   end
-
   if (x2 < x1) and (y2 > y1) then
     --print('↙');
     for i = (y1 + 1), (y2 - 1) do
@@ -315,11 +298,9 @@ function Recount(x1, y1, x2, y2)
   if a == sum then
     a, b = 0, 0
     Step = -Step
-    Score_Black, Score_White, Score_Black_Val, --[[Score_White_Val,]] Score_Zero =  Score()
+    Score_Black, Score_White, --[[Score_Black_Val, Score_White_Val,]] Score_Zero =  Score()
   end
 end
-
-local nomer = 1
 
 function UpLeft(i, j)
   local f = true
@@ -356,7 +337,6 @@ end
 
 function Up(i, j)
   local f = true
-  local ii = 2
   for jjj = j - 2, 0, -1 do
     if (f == true) then
       if (DB[(i + 1) * N + (jjj + 1)] == Step) and (DB[(i + 1) * N + (j + 1)] == 0) then
@@ -579,10 +559,6 @@ function DownRight(i, j)
 end
 
 function love.draw()
-
-
- 
-  
   Skip = true
   for i = 0, N - 1 do
     for j = 0, N - 1 do
@@ -593,16 +569,16 @@ function love.draw()
         DrowCircle(i, j, -1)
       end
       ----------------------------------------------------------
-      if (MousePosX > CenterX + (SizeBox * i)) 
-      and	(MousePosX < CenterX + (SizeBox * (i + 1))) 
-      and	(MousePosY > CenterY + (SizeBox * j)) 
-      and (MousePosY < CenterY + (SizeBox * (j + 1))) 
-      --and (DB[(i + 1) * N + (j + 1)] == 0) 
-      --and love.mouse.isDown(1) 
-      then
-        --DrowCircle(i, j, Step)
-        --love.graphics.print(DB_Val[(i + 1) * N + (j + 1)], CenterX + SizeBox / 4 + (SizeBox * i), CenterY + SizeBox / 8 + (SizeBox * j), 0, 2);
-      end
+--      if (MousePosX > CenterX + (SizeBox * i)) 
+--      and	(MousePosX < CenterX + (SizeBox * (i + 1))) 
+--      and	(MousePosY > CenterY + (SizeBox * j)) 
+--      and (MousePosY < CenterY + (SizeBox * (j + 1))) 
+--      --and (DB[(i + 1) * N + (j + 1)] == 0) 
+--      --and love.mouse.isDown(1) 
+--      then
+--        --DrowCircle(i, j, Step)
+--        --love.graphics.print(DB_Val[(i + 1) * N + (j + 1)], CenterX + SizeBox / 4 + (SizeBox * i), CenterY + SizeBox / 8 + (SizeBox * j), 0, 2);
+--      end
       ScanStep(i, j)
     end
   end
