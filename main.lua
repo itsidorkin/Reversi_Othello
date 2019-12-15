@@ -6,15 +6,8 @@ local Rad = SizeBox / 3
 local DB = {}
 local DB_Val = {}
 local a = 0
---local aa = 250
---local bb = 350
---local cc = 450
---local aaa = 50
---local bbb = 150
---local ccc = 250
 local z = 2
 local b, q = 0, 0
-local Move = {}
 
 
 function t(m)
