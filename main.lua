@@ -619,8 +619,8 @@ function love.draw()
   --love.graphics.print("Score Value: " --[[.. Score_White_Val]], CenterX, CenterY - 32 + SizeBox*10, 0, 2);
   love.graphics.setColor(0, 0, 0, 1);
   love.graphics.print(Score_Black, CenterX + 128, CenterY - 32, 0, 2);
-  love.graphics.print("A  B  C  D  I  F  G  E", CenterX + 12, CenterY - 32 + SizeBox*9, 0, 2);
-  love.graphics.print(" 8\n 7\n 6\n 5\n 4\n 3\n 2\n 1\n", CenterX + 260, CenterY - 32 + SizeBox*1, 0, 2.25);
+  --love.graphics.print("A  B  C  D  I  F  G  E", CenterX + 12, CenterY - 32 + SizeBox*9, 0, 2);
+  --love.graphics.print(" 8\n 7\n 6\n 5\n 4\n 3\n 2\n 1\n", CenterX + 260, CenterY - 32 + SizeBox*1, 0, 2.25);
   --love.graphics.print(Score_White-Score_Black, CenterX + 200, CenterY - 32 + SizeBox*10, 0, 2);
 
   love.graphics.setColor(0, 0, 0, 1);
