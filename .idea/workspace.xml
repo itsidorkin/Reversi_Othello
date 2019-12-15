@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae40580c-c8a6-4ff6-b9db-f745d26cca66" name="Default Changelist" comment="first upload">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ae40580c-c8a6-4ff6-b9db-f745d26cca66" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,10 +130,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575814393276" />
-    <state x="594" y="118" key="CommitChangelistDialog2" timestamp="1576439824658">
+    <state x="594" y="118" key="CommitChangelistDialog2" timestamp="1576446141025">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="594" y="118" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1280.994@0.0.1920.1050" timestamp="1576439824658" />
+    <state x="594" y="118" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1280.994@0.0.1920.1050" timestamp="1576446141025" />
     <state x="794" y="423" width="356" height="203" key="Github.CreateGistDialog" timestamp="1575850745798">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
