@@ -172,10 +172,12 @@ function DashBoard(x, y)
 end
 
 function DrowStepCircle(x, y, z)
+  if not(EzMode == true and (Step == 1)) then
   love.graphics.setColor(0, 0, 0, 1); --черный
   love.graphics.circle('fill', CenterX + SizeBox / 2 + (SizeBox * x), CenterY + SizeBox / 2 + (SizeBox * y), Rad / z);
   love.graphics.setColor(1, 1, 1, 1); --белый
   love.graphics.circle('fill', CenterX + SizeBox / 2 + (SizeBox * x), CenterY + SizeBox / 2 + (SizeBox * y), Rad / z / 2);
+end
 end
 
 function ScanStep(i, j)
