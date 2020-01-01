@@ -2,7 +2,7 @@
 
 <br/>
 <p align="center">
-  <img src="/../master/gif.gif"/>
+  <img src="/../master/pic/gif_user.gif"/>
 </p>
 
 ## Известные проблемы
